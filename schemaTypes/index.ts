@@ -7,6 +7,7 @@ import {contact} from './objects/contact'
 import {locality} from './documents/locality'
 import {seo} from './objects/seo'
 import {faq} from './objects/faq'
+import {page} from './documents/page'
 // import {faqGroup} from './documents/faqGroup'
 
 export const schemaTypes = [
@@ -21,6 +22,7 @@ export const schemaTypes = [
   locality,
   property,
   propertyAmenity,
+  page,
   // faqGroup,
   // Singleton Schema Types
 ]
