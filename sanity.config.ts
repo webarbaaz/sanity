@@ -7,7 +7,7 @@ import {iconPicker} from 'sanity-plugin-icon-picker'
 export default defineConfig({
   name: 'default',
   title: 'value properties',
-  projectId: 'lv6nqjq3',
+  projectId: 'pjz2qow2',
   dataset: 'production',
   plugins: [structureTool(), visionTool(), iconPicker()],
   schema: {
