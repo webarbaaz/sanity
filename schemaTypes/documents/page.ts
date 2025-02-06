@@ -23,9 +23,25 @@ export const page = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'content',
       title: 'Content',
-      name: 'blockContent',
-      type: 'text',
+      type: 'array',
+      of: [
+        {
+          type: 'block', // Rich text with typography
+        },
+        {
+          type: 'image', // Image support
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alternative Text',
+              type: 'string',
+              description: 'Important for accessibility and SEO',
+            },
+          ],
+        },
+      ],
     }),
   ],
 })
