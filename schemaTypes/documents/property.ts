@@ -172,7 +172,7 @@ export const property = defineType({
       options: {
         list: [
           {title: 'For Sell', value: 'for-sell'},
-          {title: 'for-rent', value: 'for-rent'},
+          {title: 'For rent', value: 'for-rent'},
           {title: 'Under Construction', value: 'under-construction'},
           {title: 'Ready To Move', value: 'ready-to-move'},
           {title: 'New Project', value: 'new-project'},
