@@ -8,13 +8,20 @@ export const category = defineType({
     defineField({
       title: 'Name',
       name: 'name',
+      type: 'string', // Changed from "slug" to "string"
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Slug',
+      name: 'slug',
       type: 'slug',
+      options: {source: 'name', maxLength: 96},
       validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'name.current',
+      title: 'name',
     },
   },
 })
