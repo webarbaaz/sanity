@@ -51,21 +51,14 @@ export const property = defineType({
     }),
     defineField({
       name: 'category',
-      type: 'array', // Multi-selectable field for property categories
+      type: 'array',
       of: [{type: 'string'}],
       options: {
-        list: [
-          {title: 'Residential', value: 'residential'},
-          {title: 'Commercial', value: 'commercial'},
-          {title: 'Industrial', value: 'industrial'},
-          {title: 'Agricultural', value: 'agricultural'},
-          {title: 'Mixed-Use', value: 'mixed-use'},
-          {title: 'Luxury', value: 'luxury'},
-          {title: 'Affordable', value: 'affordable'},
-        ],
+        layout: 'tags', // Allows users to add custom values
       },
-      validation: (Rule) => Rule.required().min(1), // At least one category selection required
+      validation: (Rule) => Rule.required().min(1),
     }),
+
     defineField({
       title: 'Developer',
       name: 'developer',
@@ -87,6 +80,12 @@ export const property = defineType({
     defineField({
       title: 'Total Floors',
       name: 'totalFloors',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'RERA ID',
+      name: 'reRaId',
       type: 'number',
       validation: (Rule) => Rule.required(),
     }),
@@ -132,19 +131,39 @@ export const property = defineType({
       initialValue: false,
     }),
     defineField({
+      name: 'isHotDeal',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'isUnderConstruction',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'isLatest',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'isExclusive',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       name: 'size',
       type: 'array', // Changed from 'string' to 'array'
       of: [{type: 'string'}],
       options: {
         list: [
-          {title: '1 RK', value: '1-rk'},
-          {title: '1 BHK', value: '1-bhk'},
-          {title: '2 BHK', value: '2-bhk'},
-          {title: '3 BHK', value: '3-bhk'},
-          {title: '4 BHK', value: '4-bhk'},
-          {title: '5 BHK', value: '5-bhk'},
-          {title: '6 BHK', value: '6-bhk'},
-          {title: '7 BHK', value: '7-bhk'},
+          {title: '1 RK', value: '1 rk'},
+          {title: '1 BHK', value: '1 bhk'},
+          {title: '2 BHK', value: '2 bhk'},
+          {title: '3 BHK', value: '3 bhk'},
+          {title: '4 BHK', value: '4 bhk'},
+          {title: '5 BHK', value: '5 bhk'},
+          {title: '6 BHK', value: '6 bhk'},
+          {title: '7 BHK', value: '7 bhk'},
           // {title: '8 BHK', value: '8-bhk'},
           // {title: 'Farm House', value: 'farm-house'},
           // {title: 'Villa', value: 'villa'},
@@ -174,7 +193,15 @@ export const property = defineType({
     }),
 
     defineField({
+      title: 'Carpet Area',
       name: 'carpetArea',
+      type: 'string',
+      description: 'Size in square feet',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Build Up Area',
+      name: 'buildUpArea',
       type: 'string',
       description: 'Size in square feet',
       validation: (Rule) => Rule.required(),
@@ -199,6 +226,12 @@ export const property = defineType({
       type: 'date',
       validation: (Rule) => Rule.required(),
       initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
+      name: 'launchDate',
+      description: 'The date when the property will be launch',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'price',
