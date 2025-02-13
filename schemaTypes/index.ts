@@ -8,6 +8,8 @@ import {locality} from './documents/locality'
 import {seo} from './objects/seo'
 import {faq} from './objects/faq'
 import {page} from './documents/page'
+import projectType from './documents/projectType'
+import {category} from './documents/category'
 // import {faqGroup} from './documents/faqGroup'
 
 export const schemaTypes = [
@@ -23,6 +25,8 @@ export const schemaTypes = [
   property,
   propertyAmenity,
   page,
+  projectType,
+  category,
   // faqGroup,
   // Singleton Schema Types
 ]

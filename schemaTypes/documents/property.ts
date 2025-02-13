@@ -30,14 +30,13 @@ export const property = defineType({
     }),
     defineField({
       name: 'projectType',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'property', value: 'property'},
-          {title: 'project', value: 'project'},
-        ],
-      },
+      title: 'Project Type',
+      type: 'reference',
+      to: [{type: 'projectType'}], // Connects to the new projectType document
       validation: (Rule) => Rule.required(),
+      options: {
+        disableNew: false, // Allows users to add new project types
+      },
     }),
     defineField({
       name: 'description',
@@ -51,12 +50,9 @@ export const property = defineType({
     }),
     defineField({
       name: 'category',
-      type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        layout: 'tags', // Allows users to add custom values
-      },
-      validation: (Rule) => Rule.required().min(1),
+      type: 'reference',
+      to: [{type: 'category'}],
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -124,31 +120,6 @@ export const property = defineType({
       type: 'reference',
       to: [{type: 'locality'}],
       validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'isFeatured',
-      type: 'boolean',
-      initialValue: false,
-    }),
-    defineField({
-      name: 'isHotDeal',
-      type: 'boolean',
-      initialValue: false,
-    }),
-    defineField({
-      name: 'isUnderConstruction',
-      type: 'boolean',
-      initialValue: false,
-    }),
-    defineField({
-      name: 'isLatest',
-      type: 'boolean',
-      initialValue: false,
-    }),
-    defineField({
-      name: 'isExclusive',
-      type: 'boolean',
-      initialValue: false,
     }),
     defineField({
       name: 'size',
