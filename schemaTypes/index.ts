@@ -10,6 +10,7 @@ import {faq} from './objects/faq'
 import {page} from './documents/page'
 import projectType from './documents/projectType'
 import {category} from './documents/category'
+import { review } from './documents/review'
 // import {faqGroup} from './documents/faqGroup'
 
 export const schemaTypes = [
@@ -27,6 +28,7 @@ export const schemaTypes = [
   page,
   projectType,
   category,
+  review,
   // faqGroup,
   // Singleton Schema Types
 ]
