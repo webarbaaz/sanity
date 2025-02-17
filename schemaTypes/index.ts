@@ -11,6 +11,7 @@ import {page} from './documents/page'
 import projectType from './documents/projectType'
 import {category} from './documents/category'
 import { review } from './documents/review'
+import { lead } from './documents/lead'
 // import {faqGroup} from './documents/faqGroup'
 
 export const schemaTypes = [
@@ -21,6 +22,7 @@ export const schemaTypes = [
   contact,
   faq,
   // Document Schema Types
+  lead,
   city,
   locality,
   property,
