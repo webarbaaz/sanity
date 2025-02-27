@@ -80,7 +80,7 @@ export const property = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      title: 'RERA ID',
+      title: 'Rera ID',
       name: 'reRaId',
       type: 'number',
       validation: (Rule) => Rule.required(),
@@ -166,13 +166,6 @@ export const property = defineType({
     defineField({
       title: 'Carpet Area',
       name: 'carpetArea',
-      type: 'string',
-      description: 'Size in square feet',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      title: 'Build Up Area',
-      name: 'buildUpArea',
       type: 'string',
       description: 'Size in square feet',
       validation: (Rule) => Rule.required(),
